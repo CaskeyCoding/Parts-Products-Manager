@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="750" prefWidth="750" 
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="manger.controller.UpdateProductController">
+    <children>
+         <Text fx:id="titleTarget" layoutX="25" layoutY="50">
+            <font>
+                <Font name="System Bold" size="18" />
+            </font>
+        </Text>
+        <AnchorPane layoutX="90" layoutY="10" prefHeight="32" prefWidth="196">
+            <children>    
+            </children>
+        </AnchorPane>
+        <GridPane layoutX="20" layoutY="200" prefHeight="325" prefWidth="200" vgap="10" hgap="5">               
+             <Text  GridPane.columnIndex="0" GridPane.rowIndex="1" text="ID:" >
+                 <font>
+                    <Font name="System Bold" size="12" />
+                 </font>
+             </Text>
+             <TextField fx:id="productID" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Auto-Generated" />
+             <Text GridPane.columnIndex="0" GridPane.rowIndex="2" text="Name:" >
+                 <font>
+                    <Font name="System Bold" size="12" />
+                 </font>
+             </Text>                        
+             <TextField fx:id="productName" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Name" />
+             <Text GridPane.columnIndex="0" GridPane.rowIndex="3" text="Price:" >
+                 <font>
+                    <Font name="System Bold" size="12" />
+                 </font>
+             </Text>  
+             <TextField fx:id="productPrice" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Price" />
+             <Text GridPane.columnIndex="0" GridPane.rowIndex="4" text="Inventory:" >
+                 <font>
+                    <Font name="System Bold" size="12" />
+                 </font>
+             </Text>                          
+             <TextField fx:id="productInv" GridPane.columnIndex="1" GridPane.rowIndex="4" promptText="Inventory" />
+             <Text GridPane.columnIndex="0" GridPane.rowIndex="5" text="Min:" >
+                 <font>
+                    <Font name="System Bold" size="12" />
+                 </font>
+             </Text>                        
+             <TextField fx:id="productMin" GridPane.columnIndex="0" GridPane.rowIndex="6" promptText="Min" />
+             <Text GridPane.columnIndex="1" GridPane.rowIndex="5" text="Max:" >
+                 <font>
+                    <Font name="System Bold" size="12" />
+                 </font>
+             </Text>                          
+             <TextField fx:id="productMax" GridPane.columnIndex="1" GridPane.rowIndex="6"  promptText="Max:" />
+        </GridPane>
+        <AnchorPane layoutX="300" layoutY="60" prefHeight="325" prefWidth="375">
+            <children>
+                <Button fx:id="SearchPart" layoutX="100" layoutY="0" mnemonicParsing="false" onAction="#handlePartSearch" text="Search" />
+                <TextField fx:id="searchParts" layoutX="170" layoutY="0" prefHeight="25" prefWidth="116" promptText="Search Part Name" />
+
+                <TableView fx:id="searchPartTable" layoutX="35" layoutY="45" prefHeight="150" prefWidth="200"  AnchorPane.leftAnchor="15" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="45">
+                    <columns>
+                         <TableColumn fx:id="searchPartIdColumn" prefWidth="50" text="Part ID" />
+                         <TableColumn fx:id="searchPartNameColumn" prefWidth="94" text="Part Name" />
+                         <TableColumn fx:id="searchPartInvColumn" prefWidth="98" text="Inventory Level" />
+                         <TableColumn fx:id="searchPartPriceColumn" prefWidth="132" text="Price Per Unit" />
+                    </columns>
+                </TableView>
+                <Button fx:id="addPart" layoutX="150" layoutY="215" mnemonicParsing="false" onAction="#handleAddPart" text="Add Part" />
+                <TableView fx:id="productPartTable" layoutX="35" layoutY="400" prefHeight="150" prefWidth="200" AnchorPane.leftAnchor="15" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="300">
+                    <columns>
+                         <TableColumn fx:id="productPartIdColumn" prefWidth="50" text="Part ID" />
+                         <TableColumn fx:id="productPartNameColumn" prefWidth="94" text="Part Name" />
+                         <TableColumn fx:id="productPartInvColumn" prefWidth="98" text="Inventory Level" />
+                         <TableColumn fx:id="productPartPriceColumn" prefWidth="132" text="Price Per Unit" />
+                    </columns>
+                </TableView>
+                <Button fx:id="deletePart" layoutX="150" layoutY="460" mnemonicParsing="false" onAction="#handleDeletePart" text="Delete Part" />
+                <Button fx:id="saveProduct" defaultButton="true" layoutX="150" layoutY="550" mnemonicParsing="false" onAction="#productSave" text="Save" />
+                <Button fx:id="cancel" cancelButton="true" layoutX="206" layoutY="550" mnemonicParsing="false" onAction="#productCancel" text="Cancel" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
+

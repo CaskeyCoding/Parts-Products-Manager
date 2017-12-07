@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane  prefHeight="480" prefWidth="325" 
+            xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="manger.controller.UpdatePartController">
+    <children>        
+         <Text fx:id="titleTarget" layoutX="14" layoutY="27"  strokeWidth="0">
+            <font>
+                <Font name="System Bold" size="15" />
+            </font>
+        </Text>
+        <GridPane layoutX="50" layoutY="55" prefHeight="350" prefWidth="200"  vgap="10" hgap="5">
+                <fx:define>
+                    <ToggleGroup fx:id="partSource"/>
+                </fx:define>      
+                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" > 
+                     <padding>
+                         <Insets top="5" bottom="5" />
+                     </padding>
+                </HBox>       
+                    <RadioButton fx:id="Inhouse" GridPane.columnIndex="1" GridPane.rowIndex="0"  onAction="#initialize"  text="In-House" toggleGroup="$partSource" />
+                <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" > 
+                     <padding>
+                         <Insets top="5" bottom="5" />
+                     </padding>
+                    <RadioButton fx:id="Outsourced" GridPane.columnIndex="1" GridPane.rowIndex="0"  onAction="#initialize" text="Outsourced" toggleGroup="$partSource" />               
+                </HBox> 
+                <Text  GridPane.columnIndex="0" GridPane.rowIndex="2" text="ID:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>
+                 <TextField fx:id="partID" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Auto-Generated" />
+                 <Text GridPane.columnIndex="0" GridPane.rowIndex="3" text="Name:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>                        
+                 <TextField fx:id="partName" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Name" />
+                 <Text GridPane.columnIndex="0" GridPane.rowIndex="4" text="Price:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>  
+                 <TextField fx:id="partPrice" GridPane.columnIndex="1" GridPane.rowIndex="4" promptText="Price" />
+                 <Text GridPane.columnIndex="0" GridPane.rowIndex="5" text="Inventory:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>                          
+                 <TextField fx:id="partInv" GridPane.columnIndex="1" GridPane.rowIndex="5" promptText="Inventory" />
+                 <Text GridPane.columnIndex="0" GridPane.rowIndex="6" text="Min:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>                        
+                 <TextField fx:id="partMin" GridPane.columnIndex="0" GridPane.rowIndex="7" promptText="Min" />
+                 <Text GridPane.columnIndex="1" GridPane.rowIndex="6" text="Max:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>                          
+                 <TextField fx:id="partMax" GridPane.columnIndex="1" GridPane.rowIndex="7"  promptText="Max" />             
+                 <Text  GridPane.columnIndex="0" GridPane.rowIndex="8" text="Company Name:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>
+                 <TextField fx:id="partCompany" GridPane.columnIndex="1" GridPane.rowIndex="8" promptText="Company" />
+                 <Text GridPane.columnIndex="0" GridPane.rowIndex="9" text="Machine ID:" >
+                     <font>
+                        <Font name="System Bold" size="12" />
+                     </font>
+                 </Text>
+                 <TextField fx:id="partMachineID" GridPane.columnIndex="1" GridPane.rowIndex="9" promptText="Machine ID" />
+                 <HBox GridPane.columnIndex="0" GridPane.rowIndex="12" > 
+                     <padding>
+                         <Insets top="20" bottom="10" left="30"/>
+                     </padding>
+                        <Button fx:id="saveProduct" defaultButton="true"  onAction="#partSave" text="Save" />
+                 </HBox>
+                 <HBox GridPane.columnIndex="1" GridPane.rowIndex="12" > 
+                     <padding>
+                         <Insets top="20" bottom="10" left="15"/>
+                     </padding>
+                        <Button fx:id="cancel" GridPane.columnIndex="1" GridPane.rowIndex="14" cancelButton="true" onAction="#partCancel" text="Cancel" />
+                </HBox>
+        </GridPane>
+    </children>
+</AnchorPane>
+

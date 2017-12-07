@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="600" maxWidth="800" xmlns="http://javafx.com/javafx/8.0" 
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="manger.controller.InventoryManager">
+    <GridPane alignment="center" hgap="10" vgap="10" >
+        <children>
+            <AnchorPane>
+                <children>
+                    <Text layoutY="0" layoutX="-200" text="Inventory Management System" >
+                       <font>
+                          <Font name="System Bold" size="15" />
+                       </font>
+                    </Text>
+                    <Text layoutY="75"  text="Parts" >
+                        <font>
+                            <Font name="System Bold" size="20" />
+                        </font>
+                    </Text>                     
+                   <Text layoutY="82" layoutX="525" strokeWidth="5" text="Products" >
+                        <font>
+                            <Font name="System Bold" size="20" />
+                        </font>
+                   </Text>
+                    <Button fx:id="exitBtn" cancelButton="true" minWidth="45" layoutX="734" layoutY="550"  onAction="#handleExit" text="Exit" />
+                    <AnchorPane layoutY="38" minHeight="0" minWidth="0" AnchorPane.leftAnchor="10">
+                       <children>
+                         <Pane layoutX="55" layoutY="10" maxHeight="40" maxWidth="115" AnchorPane.topAnchor="20">
+                             <children>                             
+                                <TextField fx:id="searchParts" layoutY="0" maxHeight="25" maxWidth="150" promptText="Search Parts"  />
+                                <Button fx:id="searchPart" defaultButton="true" layoutX="155" layoutY="0" onAction="#handleSearchPart" text="Search" />
+                             </children>
+                           </Pane>
+                                <TableView fx:id="partTable" minHeight="300" maxHeight="300" maxWidth="500" minWidth="500" AnchorPane.leftAnchor="-150" AnchorPane.bottomAnchor="60" AnchorPane.topAnchor="55">
+                                     <columns>
+                                         <TableColumn fx:id="partIdColumn" minWidth="79" maxWidth="80" text="ID" />
+                                         <TableColumn fx:id="partNameColumn" minWidth="200" maxWidth="200" text="Part Name" />
+                                         <TableColumn fx:id="partInvColumn" minWidth="80" maxWidth="80" text="Inventory" />
+                                         <TableColumn fx:id="partPriceColumn" minWidth="140" maxWidth="140" text="Price" />
+                                     </columns>
+                               </TableView>
+                          <ButtonBar layoutX="20" layoutY="420" maxHeight="40" maxWidth="200" AnchorPane.topAnchor="437">
+                             <buttons>
+                                <Button fx:id="addPartBtn"  onAction="#handleAddPart" text="Add" />
+                                <Button fx:id="modPartBtn"  onAction="#handleUpdatePart" text="Modify" />
+                                <Button fx:id="delPartBtn"  onAction="#handleDeletePart" text="Delete" />
+                             </buttons>
+                          </ButtonBar>
+                       </children>
+                    </AnchorPane>
+                    <AnchorPane layoutY="26" minHeight="0" minWidth="0" AnchorPane.rightAnchor="0">
+                       <children>
+                            <Pane layoutX="200" layoutY="0" minHeight="300" maxHeight="37" maxWidth="115" AnchorPane.topAnchor="20">
+                                 <children>
+                                 <TextField fx:id="searchProducts"  layoutY="20" maxHeight="25" maxWidth="145" promptText="Search Products" />
+                                 <Button fx:id="searchProductBtn" layoutX="150" layoutY="20" onAction="#handleSearchProduct"  text="Search" />
+                                </children>
+                            </Pane>
+                            <TableView fx:id="productTable" maxHeight="350" maxWidth="500" minWidth="500" AnchorPane.rightAnchor="-160" AnchorPane.bottomAnchor="50" AnchorPane.topAnchor="70">
+                                 <columns>
+                                    <TableColumn fx:id="productIdColumn" minWidth="80" maxWidth= "80" text="ID" />
+                                    <TableColumn fx:id="productNameColumn" minWidth="200" maxWidth="200" text="Product Name" />
+                                    <TableColumn fx:id="productInvColumn" minWidth="80" maxWidth="80" text="Inventory" />
+                                    <TableColumn fx:id="productPriceColumn" minWidth="140" maxWidth="140" text="Price" />
+                                 </columns>
+                            </TableView>
+                            <ButtonBar layoutX="102" layoutY="550" maxHeight="40" maxWidth="200" AnchorPane.rightAnchor="-42" AnchorPane.topAnchor="450">
+                                <buttons>
+                                    <Button fx:id="addProdBtn"  onAction="#handleAddProduct" text="Add" />
+                                    <Button fx:id="modProdBtn"  onAction="#handleUpdateProduct" text="Modify" />
+                                    <Button fx:id="delProdBtn"  onAction="#handleDeleteProduct" text="Delete" />
+                                </buttons>
+                                <padding>
+                                    <Insets right="50" top="2" />
+                                </padding>
+                            </ButtonBar>
+                        </children>
+                   </AnchorPane>
+                </children>
+            </AnchorPane>
+        </children>
+    </GridPane>
+</AnchorPane>
